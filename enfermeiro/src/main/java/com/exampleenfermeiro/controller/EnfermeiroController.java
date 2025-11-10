@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/enfermeiros")
 public class EnfermeiroController {
     @PostMapping
-    public  void cadastrar (@RequestBody String Json){
-        System.out.println(Json);
+    public  void cadastrar (@RequestBody DadosEntradaEnfermeiros dados){
+
     }
 }
