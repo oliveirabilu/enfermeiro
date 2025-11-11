@@ -25,8 +25,7 @@ public class EnfermeiroController {
     }
     @GetMapping
     public List<Enfermeiro> listar(){
-       return enfermeiroRepository.findAll()
-               .stream()
-               .toList();
+      return enfermeiroRepository.findAll();
+
     }
 }
