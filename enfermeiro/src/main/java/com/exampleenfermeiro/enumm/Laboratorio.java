@@ -1,6 +1,6 @@
 package com.exampleenfermeiro.enumm;
 
-public enum Laboratoerio {
+public enum Laboratorio {
     MEDLEY,
     ACHE,
     BAYER
