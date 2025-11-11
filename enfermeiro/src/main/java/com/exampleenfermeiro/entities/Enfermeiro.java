@@ -2,6 +2,7 @@ package com.exampleenfermeiro.entities;
 
 import com.exampleenfermeiro.enumm.Laboratorio;
 import com.exampleenfermeiro.enumm.Via;
+import com.exampleenfermeiro.record.DadosEntradaEnfermeiros;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,4 +24,13 @@ public class Enfermeiro {
     private LocalDate validade;
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
+
+    public Enfermeiro(DadosEntradaEnfermeiros dados) {
+        this.nome= dados.nome();
+        this.via=dados.via();
+        this.lote= dados.lote();
+        this.quantidade= dados.quantidade();
+        this.validade=dados.validade();
+        this.laboratorio=dados.laboratorio();
+    }
 }
