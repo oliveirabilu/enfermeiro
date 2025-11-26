@@ -20,6 +20,9 @@ public class Enfermeiro {
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
 
+    public Enfermeiro() {
+    }
+
     public Enfermeiro(DadosEntradaDTO dados) {
         this.nome= dados.nome();
         this.via=dados.via();
