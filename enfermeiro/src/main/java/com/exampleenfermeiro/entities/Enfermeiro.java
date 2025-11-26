@@ -1,5 +1,7 @@
 package com.exampleenfermeiro.entities;
 
+import com.exampleenfermeiro.enums.Laboratorio;
+import com.exampleenfermeiro.enums.Via;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 @Entity
