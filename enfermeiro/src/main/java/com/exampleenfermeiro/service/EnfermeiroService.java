@@ -7,6 +7,8 @@ import com.exampleenfermeiro.repositories.EnfermeiroRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class EnfermeiroService {
     EnfermeiroRepository enfermeiroRepository;
@@ -19,5 +21,12 @@ public class EnfermeiroService {
     public DadosSaidaDTO salvarEnfermeiro(DadosEntradaDTO dados) {
         var novoenfermeiro=enfermeiroRepository.save(new Enfermeiro(dados));
         return new DadosSaidaDTO(novoenfermeiro);
+    }
+
+    public List<DadosSaidaDTO> listarEnfermeiros() {
+        return enfermeiroRepository.findAll()
+                .stream()
+                .map(DadosSaidaDTO::new)
+                .toList();
     }
 }
