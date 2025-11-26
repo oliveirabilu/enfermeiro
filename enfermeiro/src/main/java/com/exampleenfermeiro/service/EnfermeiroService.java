@@ -31,7 +31,7 @@ public class EnfermeiroService {
                 .map(DadosSaidaDTO::new)
                 .toList();
     }
-
+    @Transactional
     public void atualizarenfermeiros(@Valid DadosAtualizarDTO dados) {
         var atualize=enfermeiroRepository.getReferenceById(dados.id());
         atualize.atualizarinformacoes(dados);
