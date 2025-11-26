@@ -36,4 +36,9 @@ public class EnfermeiroService {
         var atualize=enfermeiroRepository.getReferenceById(dados.id());
         atualize.atualizarinformacoes(dados);
     }
+    @Transactional
+    public void apagarenfermeiro(Long id) {
+        enfermeiroRepository.deleteById(id);
+
+    }
 }
