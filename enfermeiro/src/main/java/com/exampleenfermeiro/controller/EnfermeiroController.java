@@ -1,6 +1,7 @@
 package com.exampleenfermeiro.controller;
 
 import com.exampleenfermeiro.entities.Enfermeiro;
+import com.exampleenfermeiro.record.DadosAtualizarDTO;
 import com.exampleenfermeiro.record.DadosEntradaDTO;
 import com.exampleenfermeiro.record.DadosSaidaDTO;
 import com.exampleenfermeiro.service.EnfermeiroService;
@@ -32,5 +33,10 @@ public class EnfermeiroController {
         var listar=enfermeiroService.listarEnfermeiros();
         return ResponseEntity.ok(listar);
         }
+    @PutMapping
+    public ResponseEntity<Void> atualizar(@RequestBody @Valid DadosAtualizarDTO dados){
+        enfermeiroService.atualizarenfermeiros(dados);
+        return ResponseEntity.noContent().build();
+    }
     }
 
