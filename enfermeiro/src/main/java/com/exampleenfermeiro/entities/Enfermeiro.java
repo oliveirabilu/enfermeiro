@@ -2,6 +2,7 @@ package com.exampleenfermeiro.entities;
 
 import com.exampleenfermeiro.enums.Laboratorio;
 import com.exampleenfermeiro.enums.Via;
+import com.exampleenfermeiro.record.DadosAtualizarDTO;
 import com.exampleenfermeiro.record.DadosEntradaDTO;
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -73,5 +74,14 @@ public class Enfermeiro {
     }
     public void setLaboratorio(Laboratorio laboratorio) {
         this.laboratorio = laboratorio;
+    }
+
+    public void atualizarinformacoes(DadosAtualizarDTO dados) {
+       if(dados.nome()!=null){
+           this.nome= dados.nome();
+       }
+       if (dados.lote()!=null){
+           this.lote= dados.lote();
+       }
     }
 }
