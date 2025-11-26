@@ -2,6 +2,7 @@ package com.exampleenfermeiro.entities;
 
 import com.exampleenfermeiro.enums.Laboratorio;
 import com.exampleenfermeiro.enums.Via;
+import com.exampleenfermeiro.record.DadosEntradaDTO;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 @Entity
@@ -18,4 +19,13 @@ public class Enfermeiro {
     private LocalDate validade;
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
+
+    public Enfermeiro(DadosEntradaDTO dados) {
+        this.nome= dados.nome();
+        this.via=dados.via();
+        this.lote= dados.lote();
+        this.quantidade= dados.quantidade();
+        this.validade=dados.validade();
+        this.laboratorio=dados.laboratorio();
+    }
 }
