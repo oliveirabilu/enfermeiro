@@ -25,7 +25,7 @@ public class EnfermeiroController {
     public ResponseEntity<DadosSaidaDTO> mostrar(@RequestBody @Valid DadosEntradaDTO dados,
                                                  UriComponentsBuilder uriBuilder) {
         var novoenfermeiro=enfermeiroService.salvarEnfermeiro(dados);
-        var uri=uriBuilder.path("/enfermeiros{id}").buildAndExpand(novoenfermeiro.id()).toUri();
+        var uri=uriBuilder.path("/enfermeiros/{id}").buildAndExpand(novoenfermeiro.id()).toUri();
         return ResponseEntity.created(uri).body(novoenfermeiro);
     }
     @GetMapping
@@ -37,6 +37,10 @@ public class EnfermeiroController {
     public ResponseEntity<Void> atualizar(@RequestBody @Valid DadosAtualizarDTO dados){
         enfermeiroService.atualizarenfermeiros(dados);
         return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id){
+        enfermeiroService.apagarenfermeiro(id);
     }
     }
 
