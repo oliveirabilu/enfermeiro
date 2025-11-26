@@ -21,6 +21,5 @@ public class EnfermeiroController {
     @PostMapping
     public DadosSaidaDTO mostrar(@RequestBody @Valid DadosEntradaDTO dados ) {
         return enfermeiroService.salvarEnfermeiro(dados);
-
     }
 }
