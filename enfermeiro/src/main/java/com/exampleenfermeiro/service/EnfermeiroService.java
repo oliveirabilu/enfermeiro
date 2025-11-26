@@ -2,6 +2,7 @@ package com.exampleenfermeiro.service;
 
 import com.exampleenfermeiro.entities.Enfermeiro;
 import com.exampleenfermeiro.record.DadosEntradaDTO;
+import com.exampleenfermeiro.record.DadosSaidaDTO;
 import com.exampleenfermeiro.repositories.EnfermeiroRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +17,7 @@ public class EnfermeiroService {
     //Post
     @Transactional
     public DadosSaidaDTO salvarEnfermeiro(DadosEntradaDTO dados) {
-        enfermeiroRepository.save(new Enfermeiro(dados));
+        var novoenfermeiro=enfermeiroRepository.save(new Enfermeiro(dados));
+        return new DadosSaidaDTO(novoenfermeiro);
     }
 }
