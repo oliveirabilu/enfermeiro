@@ -1,6 +1,7 @@
 package com.exampleenfermeiro.controller;
 
 import com.exampleenfermeiro.record.DadosEntradaDTO;
+import com.exampleenfermeiro.record.DadosSaidaDTO;
 import com.exampleenfermeiro.service.EnfermeiroService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,8 @@ public class EnfermeiroController {
     }
 
     @PostMapping
-    public void mostrar(@RequestBody @Valid DadosEntradaDTO dados ) {
-        enfermeiroService.salvarEnfermeiro(dados);
+    public DadosSaidaDTO mostrar(@RequestBody @Valid DadosEntradaDTO dados ) {
+        return enfermeiroService.salvarEnfermeiro(dados);
 
     }
 }
