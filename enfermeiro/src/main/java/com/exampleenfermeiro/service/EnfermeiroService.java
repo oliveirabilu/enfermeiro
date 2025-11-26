@@ -1,9 +1,11 @@
 package com.exampleenfermeiro.service;
 
 import com.exampleenfermeiro.entities.Enfermeiro;
+import com.exampleenfermeiro.record.DadosAtualizarDTO;
 import com.exampleenfermeiro.record.DadosEntradaDTO;
 import com.exampleenfermeiro.record.DadosSaidaDTO;
 import com.exampleenfermeiro.repositories.EnfermeiroRepository;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,5 +30,10 @@ public class EnfermeiroService {
                 .stream()
                 .map(DadosSaidaDTO::new)
                 .toList();
+    }
+
+    public void atualizarenfermeiros(@Valid DadosAtualizarDTO dados) {
+        var atualize=enfermeiroRepository.getReferenceById(dados.id());
+        atualize.atualizarinformacoes(dados);
     }
 }
