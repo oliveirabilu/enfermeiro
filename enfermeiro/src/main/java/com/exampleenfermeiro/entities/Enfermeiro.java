@@ -28,4 +28,47 @@ public class Enfermeiro {
         this.validade=dados.validade();
         this.laboratorio=dados.laboratorio();
     }
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public Via getVia() {
+        return via;
+    }
+    public void setVia(Via via) {
+        this.via = via;
+    }
+    public String getLote() {
+        return lote;
+    }
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+    public LocalDate getValidade() {
+        return validade;
+    }
+    public void setValidade(LocalDate validade) {
+        this.validade = validade;
+    }
+    public Laboratorio getLaboratorio() {
+        return laboratorio;
+    }
+    public void setLaboratorio(Laboratorio laboratorio) {
+        this.laboratorio = laboratorio;
+    }
 }
