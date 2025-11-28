@@ -39,8 +39,9 @@ public class EnfermeiroController {
         return ResponseEntity.noContent().build();
     }
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id){
+    public ResponseEntity<Void> deletar(@PathVariable Long id){
         enfermeiroService.apagarenfermeiro(id);
+        return ResponseEntity.noContent().build();
     }
     }
 
