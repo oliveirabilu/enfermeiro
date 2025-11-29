@@ -18,6 +18,7 @@ public class EnfermeiroController {
     EnfermeiroService enfermeiroService;
 
     public EnfermeiroController(EnfermeiroService enfermeiroService) {
+
         this.enfermeiroService = enfermeiroService;
     }
 
